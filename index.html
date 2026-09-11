@@ -1,4 +1,18 @@
-import { useState, useEffect, useRef } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BEE-SIM</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{background:#1a1400;overflow:hidden;}</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef } = React;
 
 // ─────────────────────────────────────────────────────────
 // CONSTANTS
@@ -2324,7 +2338,7 @@ function render(ctx, grid, proto, npcs, debug, beeCount, enemyNPCs = [], defense
 // ─────────────────────────────────────────────────────────
 // COMPONENT
 // ─────────────────────────────────────────────────────────
-export default function BeeSim() {
+function BeeSim() {
   const canvasRef = useRef(null);
   const stateRef = useRef(null);
   const timerRef = useRef(null);
@@ -3280,3 +3294,8 @@ function ModeCard({ title, subtitle, detail, color, onClick }) {
     </div>
   );
 }
+
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(BeeSim));
+</script>
+</body>
+</html>
